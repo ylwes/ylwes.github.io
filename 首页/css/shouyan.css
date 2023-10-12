@@ -1,0 +1,43 @@
+.one{
+	width: 100%;
+	height: 100vh;
+	background-image: url(../img/2.jpeg);
+	background-size: cover;
+	background-position:center;
+	position: relative;
+	overflow: hidden;
+}
+.logo{
+	width: 100px;
+	cursor: pointer;
+}
+.two{
+	width: 85%;
+	height: 10%;
+	margin: auto;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+.button{
+	color: #fbfcfd;
+	padding: 100px 25px;
+	background: transparent;
+	border: 1px solid #fff;
+	border-radius: 20px;
+}
+.top{
+	top: 100%;
+
+	float: right;
+	margin-right: 8px;
+	margin-top: 8px;
+}
+.content{
+	color: #FBFCFD;
+	position: absolute;
+	top: 50%;
+	left: 8%;
+	transform: translateY(-50%);
+	z-index: 2;
+}

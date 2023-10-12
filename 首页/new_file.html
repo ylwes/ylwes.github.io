@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var a,b,c,d,e,f;
+			a=prompt("请问您是否发热：1-发烧，2-局部皮肤发热，3-没有发热")
+			if(a=='1')
+				b=prompt("A-呕吐 厌食，B-嗓子红痛 ，C-红疹 ，D-红肿，E-脱屑,F-瘙痒 ,G-出现会蔓延的疹子,H-水肿,I-水肿,J-疱疹")
+				if(b=='A'||b=='B'|| b=='AB'||b=='BC'|| b=='ABC')
+    				document.write("手足口对症治疗即可、不需要抗病毒药、抗生素、各种喷雾剂、1~2周就可自愈、重症手足口需要住院治疗");
+			else if(a=='2') 
+				document.write("如果您是手上起疹子且局部发热，您可能是皮肤过敏或是感染导致的。请您先用温水和肥皂清洗双手，然后用消毒酒精或碘伏消毒，避免用力抓挠疹子；如果情况没有得到改善，可以前往医院就诊");
+			else if(a=='3') 
+				document.write("如果您手上起疹子但是并未发热，可能是由于皮肤过敏，接触过敏，荨麻疹等导致的"); 	
+		</script>
+	</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="	utf-8">
+		<title>疾病查询</title>
+		<link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
+		<script defer src="https://pyscript.net/latest/pyscript.js"></script>
+	</head>
+	<body>
+		<h1>请输入您查询的疾病：</h1>
+		<py-script>
+import difflib
+class Sjk:
+    def __init__(self,bm,ms):
+        self.bm=bm
+        self.ms=ms
+class Sjkg:
+    jb = []
+    def __init__(self):
+        jb1 = Sjk('水痘','是指在儿童初次感染引起水痘，恢复后病毒潜伏在体内，少数病人在成人后病毒再发而引起带状疱疹，故被称为水痘-带状疱疹病毒。水痘是具有高度传染性的儿童常见疾病,好发于2~6岁,传染染源主要是患者，患者急性期水痘内容物及呼吸道分泌物内均含有病毒。')
+        jb2 = Sjk('天花','天花(Smallpox)是由天花病毒引起的一种烈性传染病，也是在世界范围内被人类消灭的一种传染病。感染天花病毒后的潜伏期平均约为12天(7-17天)。感染后的初期症状包括:高烧、疲累、头疼、心跳加速及背痛。2-3天后，会有典型的天花红疹明显地分布在脸部、手臂和腿部。在发疹的初期，还会有淡红色的块状面积伴随疹子而出现。病灶在几天之后开始化脓，直到第2个星期开始结痂。接下来的3-4周慢慢发展成疥癣，然后慢慢剥落。天花是感染痘病毒引起的，患者在痊愈后脸上会留有麻子，"天花"由此得名。')
+        jb3 = Sjk('急性荨麻疹','急性荨麻疹是一种常见的过敏性皮肤病，在接触过敏原的时候，会在身体不特定的部位，冒出一块块形状、大小不一的红色斑块，这些产生斑块的部位，会发生发痒的情形，荨麻疹可以分为急性和慢性，急性荨麻疹为暂时性的过敏反应，只要依照医师指示治疗，大多可在数日内痊愈。')
+        jb4 = Sjk('胆碱能性荨麻疹','胆碱能性荨麻疹属于人们常说的风疹块的一种。当受热、精神紧张、摄入热的食物或饮料，或在运动后，体温略胆碱能性荨麻疹增，增热的血流刺激大脑体温调节中枢，兴奋胆碱能性神经并释放乙酰胆碱，如果对这种化学物质过敏，可以出现过敏反应。治疗上多以避免接触过敏源，使用曾氏透疹方内服中药调理改善，逐渐恢复皮肤免疫力。')
+        jb5 = Sjk('手足口病','手口足病(Hand-mouth-foot disease)是一种发疹性传染病，主要是由柯萨奇病毒引起，一年四季都可能发病，但以夏秋季节患病最多，任何年龄均可发病，尤其是3岁以下的孩子。病毒寄生在患儿的咽部、唾液、疱疹和粪便中，不仅可通过唾液、喷嚏、咳嗽，说话时的飞沫传染给别的孩子，还可通过手、生活用品及餐具等间接传染。一旦流行，就会使很多孩子被传染，被传染上的孩子会在手、足皮肤或口腔粘膜上出现类似水痘样的小疱疹。')
+        jb6 = Sjk('湿疹','湿疹，属于比较常见的由多种内外因素引起的，瘙痒剧烈的，表皮及真皮浅层的皮肤病炎症性反应。分急性、亚急性、慢性三期。急性期具有渗出倾向。慢性期则浸润、肥厚。特点为自觉、剧烈瘙痒，皮损多形性，对称分布，有渗出倾向，慢性病程，易反复发作。有些病人直接表现为慢性湿疹。皮损具有多形性、对称性、瘙痒和易反复发作等特点。针对发病状况我们应避免各种外界刺激，如热水烫洗，过度搔抓、清洗及接触可能敏感的物质如皮毛制剂等。少接触化学成分用品，如肥皂、洗衣粉、洗涤精等。避免可能致敏和刺激性食物，如辣椒、浓茶、咖啡、酒类。')
+        jb7 = Sjk('丘疹性荨麻疹','丘疹性荨麻疹(papular urticaria)又称荨麻疹性苔藓、婴儿苔藓或小儿荨麻疹性苔藓、急性单纯性痒疹，是婴幼儿常见的过敏性皮肤病。临床特点为散在性、性质稍坚硬、顶端有小疱的丘疹。周缘有纺锤形红晕，自觉瘙痒。')
+        jb8 = Sjk('风疹','风疹是由风疹病毒（RV）引起的急性出疹性传染疾病，临床上以前驱期短、低热、皮疹和耳后、枕部淋巴结肿大为特征。一般病情较轻，病程短，预后良好。但孕妇感染风疹，将会导致胎儿严重损害。引起先天性风疹综合征（FRS）。')
+        jb9 = Sjk('猩红热','猩红热(searlet fever)为A群溶血性链球菌感染引起的急性呼吸道传染病。其临床特征为发热、咽峡炎、全身弥漫性鲜红色皮疹和疹退后明显的脱屑。少数患者患病后由于变态反应而出现心、肾、关节的损害。')
+        self.jb.append(jb1)
+        self.jb.append(jb2)
+        self.jb.append(jb3)
+        self.jb.append(jb4)
+        self.jb.append(jb5)
+        self.jb.append(jb6)
+        self.jb.append(jb7)
+        self.jb.append(jb8)
+        self.jb.append(jb9)
+bm="水痘，天花，急性荨麻疹，胆碱能性荨麻疹，手足口病，湿疹，丘疹性荨麻疹，风疹，猩红热"
+def fuzzy_matching(texts, value):
+        texts = texts.split("，")
+        texts_score = {}
+        for i in texts:
+            score = difflib.SequenceMatcher(None, i, value).quick_ratio()
+            texts_score[i] = score
+        texts_score = sorted(texts_score.items(), key=lambda x: x[1], reverse=False)
+        match_value = texts_score[-1][0]
+        fz = texts_score[-1][-1]
+        if fz == 1.0:
+            return match_value
+        else:
+            print('抱歉，我们暂时没有收录此疾病，或者你重新用更加准确的词语输入病名')
+
+ 
+if __name__=='__main__':
+    while 1:
+        zx=input('请输入你要咨询的病名:')
+        match_value =fuzzy_matching(bm, zx)
+        sj=Sjkg()
+        for i in sj.jb:
+            if i.bm == match_value:
+                print(i.ms)
+                break
+		</py-script>
+		<div class="top">
+			<a href="首页.html"><span class="标题">首页  </span></a>
+		    <a href="疾病问诊1.html"><span class="标题">疾病问诊  </span></a>
+		    <a href="药品查询1.html"> <span class="标题">药品查询  </span></a>  
+			<a href="疾病查询1.html"> <span class="标题">疾病查询  </span></a>
+			
+		</div>
+	</body>
+<ml>

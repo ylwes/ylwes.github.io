@@ -1,0 +1,25 @@
+.标题{
+	font-size: 40px;
+	font-family: '宋体';
+}
+.top{
+	width: 1500px;
+	height: 100px;
+	background-color: floralwhite;
+	position: fixed;
+	top: 0%;
+}
+button{
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transfo:translate(-50%,-50%);
+				padding: 20px;
+				font-size: 20px;
+				border-radius: 15px;
+				border: none;
+				cursor: pointer;
+				background-color: #fd8112;
+				color: #ffffff;
+				font-weight: bolder;
+			}

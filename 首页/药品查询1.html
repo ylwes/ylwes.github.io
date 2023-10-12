@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="	utf-8">
+		<title>药品查询</title>
+		<link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
+		<script defer src="https://pyscript.net/latest/pyscript.js"></script>
+	</head>
+	<body>
+		<h1>请输入您查询的药品：</h1>
+		<py-script>
+import difflib
+class Sjk:
+    def __init__(self,ym,ms):
+        self.ym=ym
+        self.ms=ms
+class Sjkg:
+    jb = []
+    def __init__(self):
+        jb1 = Sjk('红霉素软膏','红霉素软膏，用于脓疱疮等化脓性皮肤病、小面积烧伤、溃疡面的感染和寻常痤疮。')
+        jb2 = Sjk('盐酸阿莫罗芬软膏','盐酸阿莫罗芬乳膏，适应症为由皮肤真菌引起的皮肤真菌病:足癣(脚癣，运动员脚)，股癣，体癣。皮肤念珠菌病。')
+        jb3 = Sjk('酮康他索乳膏','主要用于皮肤浅表真菌感染，如手癣、足癣、体癣、股癣等。')
+        jb4 = Sjk('卤米松乳膏','对皮质类固醇治疗有效的非感染性炎症性皮肤病。如皮炎、钱币状皮炎和寻常型脂溢性皮炎、接触性皮炎、异位性皮炎、局限性神经性银屑病。')
+        jb5 = Sjk('丙酸氯倍他索乳膏','丙酸氯倍他索乳膏，适应症为适用于慢性湿疹、银屑病、扁平苔藓、盘状红斑狼疮、神经性皮炎、掌跖脓疱病等皮质类固醇外用治疗有效的皮肤病。')
+        self.jb.append(jb1)
+        self.jb.append(jb2)
+        self.jb.append(jb3)
+        self.jb.append(jb4)
+        self.jb.append(jb5)
+ym="红霉素软膏，盐酸阿莫罗芬软膏，酮康他索乳膏，卤米松乳膏，丙酸氯倍他索乳膏"
+def fuzzy_matching(texts, value):
+        texts = texts.split("，")
+        texts_score = {}
+        for i in texts:
+            score = difflib.SequenceMatcher(None, i, value).quick_ratio()
+            texts_score[i] = score
+        texts_score = sorted(texts_score.items(), key=lambda x: x[1], reverse=False)
+        match_value = texts_score[-1][0]
+        fz = texts_score[-1][-1]
+        if fz == 1.0:
+            return match_value
+        else:
+            print('抱歉，我们暂时没有收录此药品，或者你重新用更加准确的词语输入药品')
+        
+if __name__=='__main__':
+    zx=input()
+    match_value =fuzzy_matching(ym, zx)
+    sj=Sjkg()
+    for i in sj.jb:
+         if i.ym == match_value:
+            print(i.ym,i.ms)
+            break
+         
+    
+		</py-script>
+		<div class="top">
+			<a href="首页.html"><span class="标题">首页  </span></a>
+		    <a href="疾病问诊1.html"><span class="标题">疾病问诊  </span></a>
+		    <a href="药品查询1.html"> <span class="标题">药品查询  </span></a>  
+			<a href="疾病查询1.html"> <span class="标题">疾病查询  </span></a>
+			
+		</div>
+	</body>
+</html>
