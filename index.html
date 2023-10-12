@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>医疗问诊</title>
+		<link rel="stylesheet" href="css/轮播主页.css"/>
+	</head>
+	<body>
+		<div class="boxx"></div>
+		<header class="header">
+			<div class="nav-box">
+				<span>医疗问诊</span>
+				<ul class="nav">
+					 <li><a href="首页1.html">首页</a></li>
+					 <li><a href="医疗问诊1.html">医疗问诊</a></li>
+					 <li><a href="关于我们1.html">联系我们</a></li>
+				</ul>
+			</div>
+		</header>
+		<div class="box">
+			<div class="box-img"><img src="img/1.jpg" width="1000" height="460"><div class="h">荨麻疹 </div> </div>
+			<div class="box-img"><img src="img/2.jpg" width="1000" height="460"><div class="h">荨麻疹 </div> </div>
+			<div class="box-img"><img src="img/3.jpeg" width="1000" height="460"><div class="h">荨麻疹 </div> </div>
+			<div class="box-img"><img src="img/4.jpeg" width="1000" height="460"><div class="h">荨麻疹 </div> </div>
+			<div class="box-img"><img src="img/5.jpeg" width="1000" height="460"><div class="h">荨麻疹 </div> </div>
+		    <div class="box-img"><img src="img/6.jpg" width="1000" height="460"><div class="h">荨麻疹 </div> </div>
+			<div class="box-img"><img src="img/7.jpg" width="1000" height="460"><div class="h">荨麻疹 </div> </div>
+			<div class="box-img"><img src="img/8.jpg" width="1000" height="460"><div class="h">荨麻疹 </div> </div>
+			<div class="box-left">&lt;</div>
+			<div class="box-right">&gt;</div>
+			<div class="box-zhiding">
+				<ul>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+				</ul>
+			</div>
+		</div>
+		<div class="footbox">
+			来自于贵州医科大学(GMU)-2021级卓越工程师医电组 2023.9
+		</div>
+		<script type="text/x-javascript" src="js/jquery-3.7.1.min.js"></script>
+		<script type="text/x-javascript">
+			$(function()
+			{
+				var index=0;
+				setInterval(function()
+				{
+					if(index==7)
+					{
+						index=0;
+						$(".box-img").css("opacity","0");
+					    $(".box-img").eq(index).css("opacity","1");
+					}
+					else
+					{
+						index++;
+						$(".box-img").css("opacity","0");
+						$(".box-img").eq(index).css("opacity","1");
+				    }
+				},2000)
+				$(".box-left").click(function(){
+					if(index==0){
+						index=$(".box-img").length-1;
+						$(".box-img").css("opacity","0");
+						$(".box-img").eq(index).css("opacity","1");
+					}
+					else{
+						index--;
+						$(".box-img").css("opacity","0");
+						$(".box-img").eq(index).css("opacity","1");
+					}
+				})
+				$(".box-right").click(function(){
+					if(index==$(".box-img").length-1){
+						index=0;
+						$(".box-img").css("opacity","0");
+						$(".box-img").eq(index).css("opacity","1");
+					}
+					else{
+						index++;
+						$(".box-img").css("opacity","0");
+						$(".box-img").eq(index).css("opacity","1");
+					}
+				})
+			})
+		</script>
+	</body>
+</html>
